@@ -19,6 +19,9 @@ namespace TalentManager
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // Add global authorize attribute
+            config.Filters.Add(new AuthorizeAttribute());
         }
     }
 }

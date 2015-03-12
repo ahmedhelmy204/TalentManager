@@ -8,6 +8,8 @@ namespace TalentManager
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            // Add global authorize attribute
+            filters.Add(new AuthorizeAttribute());
         }
     }
 }
