@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using TalentManager.Handlers;
 
 namespace TalentManager
 {
@@ -20,8 +21,10 @@ namespace TalentManager
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            // Add global authorize attribute
-            config.Filters.Add(new AuthorizeAttribute());
+            //// Add global authorize attribute
+            //config.Filters.Add(new AuthorizeAttribute());
+
+            config.MessageHandlers.Add(new MyHandler());
         }
     }
 }
