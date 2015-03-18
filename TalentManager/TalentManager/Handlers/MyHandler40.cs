@@ -10,7 +10,7 @@ namespace TalentManager.Handlers
 {
     public class MyHandler40 : DelegatingHandler // Handler for .NET 4.0
     {
-        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
         {
             // Inspect and do your stuff with request here
 
@@ -19,21 +19,13 @@ namespace TalentManager.Handlers
 
             bool isBadRequest = false;
             if (isBadRequest)
-            {
-                return Task<HttpResponseMessage>.Factory.StartNew(() =>
-                    {
-                        return request.CreateResponse(HttpStatusCode.BadRequest);
-                    });
-            }
+                return request.CreateResponse(HttpStatusCode.BadRequest);
 
-            return base.SendAsync(request, cancellationToken)
-                .ContinueWith((task) =>
-                {
-                    var response = task.Result;
+            var response = await base.SendAsync(request, cancellationToken);
 
-                    // Inspect and do your stuff with response here
-                    return response;
-                });
+            // Inspect and do your stuff with response here
+
+            return response;
         }
     }
 }
