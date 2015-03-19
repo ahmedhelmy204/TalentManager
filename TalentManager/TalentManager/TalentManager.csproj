@@ -143,6 +143,7 @@
     <Compile Include="Handlers\MyHandler.cs" />
     <Compile Include="Handlers\MyHandler40.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Modules\MyHttpModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
