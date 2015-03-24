@@ -42,6 +42,17 @@ namespace TalentManager.Controllers
             // Update employee in the system
         }
 
+        public IEnumerable<Employee> Get(string department)
+        {
+            if (!String.Equals(department, "HR", StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException("Bad Department");
+
+            return new List<Employee>()
+            {
+                new Employee(){Id=12345,Name="John Q Human"}
+            };
+        }
+
 
     }
 }
