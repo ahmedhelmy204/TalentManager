@@ -53,6 +53,21 @@ namespace TalentManager.Controllers
             };
         }
 
+        public Employee Get(int id)
+        {
+            if (id > 999999)
+            {
+                throw new HttpResponseException(
+                    new HttpResponseMessage()
+                    {
+                        Content = new StringContent("Invalid employee id"),
+                        StatusCode = HttpStatusCode.BadRequest
+                    }
+                    );
+            }
+
+            return new Employee() { Id = id, Name = "John Q Law", Department = "Enforcement" };
+        }
 
     }
 }
