@@ -9,7 +9,7 @@ using TalentManager.Models;
 
 namespace TalentManager.Controllers
 {
-    [Authorize(Roles = "HumanResourceTeamMember")]
+    //[Authorize(Roles = "HumanResourceTeamMember")]
     public class EmployeesController : ApiController
     {
         //public Employee Get(int id)

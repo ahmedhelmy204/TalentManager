@@ -24,7 +24,7 @@ namespace TalentManager
             //// Add global authorize attribute
             //config.Filters.Add(new AuthorizeAttribute());
 
-            config.MessageHandlers.Add(new MyHandler());
+            //config.MessageHandlers.Add(new MyHandler());
         }
     }
 }

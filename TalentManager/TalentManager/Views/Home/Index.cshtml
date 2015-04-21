@@ -6,8 +6,12 @@
 
                 $.getJSON("/api/employees", function (data) {
                     $.each(data, function (i, employee) {
+
+                        var now = new Date();
+                        var ts = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+
                         var content = employee.Id + ' ' + employee.Name;
-                        content = content + ' ' + employee.Department;
+                        content = content + ' ' + employee.Department + ' ' + ts;
 
                         $('#employees').append($('<li/>', { text: content }));
                     });

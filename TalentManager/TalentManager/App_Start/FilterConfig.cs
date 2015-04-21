@@ -9,7 +9,7 @@ namespace TalentManager
         {
             filters.Add(new HandleErrorAttribute());
             // Add global authorize attribute
-            filters.Add(new AuthorizeAttribute());
+            //filters.Add(new AuthorizeAttribute());
         }
     }
 }
