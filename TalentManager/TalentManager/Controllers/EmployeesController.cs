@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using TalentManager.Filters;
 using TalentManager.Models;
 
 namespace TalentManager.Controllers
@@ -36,6 +37,8 @@ namespace TalentManager.Controllers
             };
         }
 
+        // Listing 4-9
+        [EnableETag]
         public Employee Get(int id)
         {
             if (id > 999999)
