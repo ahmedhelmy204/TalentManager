@@ -136,6 +136,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Filters\ConcurrencyChecker.cs" />
     <Compile Include="Filters\EnableETag.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\TimeShareAttribute.cs" />
